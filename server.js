@@ -12,7 +12,7 @@ app.use(express.json());
 
 //server static files
 app.use(express.static("public"));
-
+ 
 
 //set Template engine 
 app.use(expressLayout)

@@ -1,0 +1,1 @@
+console.log('hello ji please ye setuo theek se run ho jaye') 
