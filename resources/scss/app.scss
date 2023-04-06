@@ -32,6 +32,7 @@ background: $secondary;
     background: $secondary;
 }
 
+
 .add-to-cart{
     border: 2px solid $primary;
     color: $primary;
@@ -40,5 +41,34 @@ background: $secondary;
        background:$primary;
        border-color:$pure ;
        color: $pure;
+    }
+}
+.btn-primary{
+    border: 2px solid $primary;
+    background-color: $primary;
+    transition: $smooth;
+    &:hover{
+       background:$primary-hover;
+      
+    }
+}
+
+section.cart{
+    background: $secondary;
+    .cart{
+        color: $primary;
+    }
+}
+
+
+section.login{
+    background: $secondary;
+    min-height: calc(100vh - 88px);
+    a{
+        color: $primary;
+        &:hover{
+             color: $primary-hover;
+        }
+
     }
 }
