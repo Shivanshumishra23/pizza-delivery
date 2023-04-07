@@ -1,10 +1,11 @@
 @import './variables';
+@import '~noty/src/noty.scss';
+@import '~noty/src/themes/mint.scss';
 
 body{
     font-family: 'Lato',sans-serif;
     -webkit-font-smoothing : antialiased;
     color: $dark;
-
 }
 
 nav li:last-child a {
@@ -14,7 +15,6 @@ nav li:last-child a {
     }
  
 }
-
 
 nav li a {
     transition: $smooth ;
@@ -41,6 +41,9 @@ background: $secondary;
        background:$primary;
        border-color:$pure ;
        color: $pure;
+    }
+    &:focus{
+        outline:none
     }
 }
 .btn-primary{
@@ -71,4 +74,8 @@ section.login{
         }
 
     }
+}
+.noty-theme_mint{
+    border-radius: 50px!important;
+    padding-left: 8px !important;
 }
