@@ -1,10 +1,10 @@
 {
   "name": "full-stack-pizza-app",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
     "express-ejs-layouts": "^2.5.1",
     "express-flash": "^0.0.2",
     "express-session": "^1.17.3",
+    "moment": "^2.29.4",
     "mongoose": "^7.0.3",
     "noty": "^3.2.0-beta-deprecated",
     "passport": "^0.6.0",
@@ -29,5 +30,6 @@
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.60.0",
     "sass-loader": "^12.1.0"
-  }
+  },
+  "description": ""
 }

@@ -25,7 +25,8 @@ app.use(express.urlencoded({extended:false}))
 
 //Database Connection
 mongoose
-.connect('mongodb://127.0.0.1:27017/pizza')
+// .connect('mongodb://127.0.0.1:27017/pizza')
+.connect(`${process.env.MONGODB_URI}/pizza?retryWrites=true&w=majority`)
 .then(()=>console.log("Mongodb connected"))
 .catch((err)=>console.log("Mongo Error" ,err));
 
@@ -44,7 +45,7 @@ app.use(session({
     secret: process.env.COOKIE_SECRET,
     resave: false,
     store: MongoDbStore.create({
-        mongoUrl :'mongodb://127.0.0.1:27017/pizza'
+        mongoUrl :process.env.MONGODB_URI+"/pizza"
     }),
     saveUninitialized:false,
     cookie:{maxAge: 1000*60*60*24} //24 hours
@@ -84,6 +85,8 @@ require('./routes/web')(app)
 
 
 
-app.listen(3000,()=>{
-    console.log('Listening on port 3000')
-})
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`);
+});

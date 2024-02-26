@@ -18,11 +18,10 @@
         <h1><%= pizza.item.name %></h1>
         <span><%= pizza.item.size %> </span>
     </div>
-     <span class="flex-1"><%= pizza.qty %></span>
-     <span class="font-bold text-lg">₹<%= pizza.item.price *pizza.qty %></span>  
-
+    <span class="flex-1"><%= pizza.qty %></span>
+    <span class="font-bold text-lg">₹<%= pizza.item.price * pizza.qty %></span> 
     </div>
-
+ 
     <% } %>
 
 <hr>
@@ -31,20 +30,28 @@
         <span class="text-lg font-bold">Totol Amount:</span>
         <span class="amount text-2xl font-bold ml-2">₹<%= session.cart.totalPrice %></span>
     </div>
-
+    <% if (user){ %>
   <div>
-    <form action="">
-        <input class="border border-gray-400 p-2 w-1/2 mb-4" type="text" placeholder="Phone Number">
-        <input class="border border-gray-400 p-2 w-1/2" type="text" placeholder="Address">
+   
+    <form action="/orders" method="post">
+        <input name="phone" class="border border-gray-400 p-2 w-1/2 mb-4" type="text" placeholder="Phone Number">
+        <input name="address" class="border border-gray-400 p-2 w-1/2" type="text" placeholder="Address">
         <div>
             <button type="submit" class="btn-primary px-6 py-2 rounded-full text-white font-bold mt-6"  style="background-color: #FE5F1E;">Order Now</button>
+            <!-- <form>
+                <script src = "https://cdn.razorpay.com/static/widget/payment-button.js"
+                data-payment_button_id = "pl_LatgEd6cmU5N1L"
+                data-button_text = "Order And Pay Now"
+                data-button_theme = "brand-color">
+                </script>
+             </form> -->
         </div>
         
     </form>
   </div>
-
-<!-- <a href="" class="inline-block btn-primary px-6 py-2 rounded-full text-white font-bold mt-6">Login to Continue</a> -->
-
+<% }else{ %>
+<a href='/login' class="inline-block btn-primary px-6 py-2 rounded-full text-white font-bold mt-6">Login to Continue</a>
+  <% } %>
 </div>
 
 </div>
